@@ -27,6 +27,6 @@ input{
     max-height: max-content;
     width: 1500px;
     background-color: chartreuse;  
-    border: 5px solid lawngreen;
+    border: 5px solid chartreuse;
     border-radius: 10px;  
 }
