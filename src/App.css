@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width: 100%;
+}
+
+.todo-row{
+    margin: 10px 5px;
+}
+.todo-button{
+    min-width: 100px;
+    /* margin-left: 120px; */
+}
+/* #date-picker{
+    margin-right: 50px;
+} */
+.add-btn{
+    margin-left: 147px;
+}
+.todo-container{
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-height: max-content;
+    width: 1500px;
+    background-color: chartreuse;  
+    border: 5px solid lawngreen;
+    border-radius: 10px;  
+}
