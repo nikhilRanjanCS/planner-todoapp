@@ -9,14 +9,15 @@ function AddTodo({ addTask }) {
   const handleDateChange = (event) => {
     setDueDate(event.target.value);
   };
-  const handleAddButtonClick = () => {
+  const handleAddButtonClick = (event) => {
+    event.preventDefault();
     addTask(todoName, dueDate);
     setDueDate("");
     setTodoName("");
   };
   return (
     <div className="container text-center">
-      <div className="row todo-row">
+      <form className="row todo-row" onSubmit={handleAddButtonClick}>
         <div className="col-6">
           <input
             type="text"
@@ -37,15 +38,11 @@ function AddTodo({ addTask }) {
           />
         </div>
         <div className="col-2">
-          <button
-            type="button"
-            className="btn btn-primary todo-button add-btn"
-            onClick={handleAddButtonClick}
-          >
+          <button type="submit" className="btn btn-primary todo-button add-btn">
             Add
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
