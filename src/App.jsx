@@ -27,8 +27,11 @@ function App() {
     //   task:task,
     //   date:date
     // }
-    let newtodoItems = [...todoItems, { name: task, dueDate: date }];
-    setTodoItems(newtodoItems);
+
+    setTodoItems((currValue) => {
+      let newtodoItems = [...currValue, { name: task, dueDate: date }];
+      return newtodoItems;
+    });
   };
   const handleDeleteButton = (todoItemName) => {
     const newtodoItems = todoItems.filter((item) => item.name !== todoItemName);
