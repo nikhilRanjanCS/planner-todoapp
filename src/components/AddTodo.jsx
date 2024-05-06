@@ -1,8 +1,11 @@
 import { useRef } from "react";
-
-function AddTodo({ addTask }) {
+import { TodoItemsContext } from "../store/todo-items-store";
+import { useContext } from "react";
+function AddTodo() {
   const nameInput = useRef();
   const dateInput = useRef();
+  const contextObj = useContext(TodoItemsContext);
+  const addTask = contextObj.addNewItem;
 
   const handleAddButtonClick = (event) => {
     event.preventDefault();

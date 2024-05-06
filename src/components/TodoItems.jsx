@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { TodoItemsContext } from "../store/todo-items-store";
 import TodoItem from "./TodoItem";
 import styles from "./TodoItems.module.css";
 
@@ -24,16 +26,15 @@ import styles from "./TodoItems.module.css";
 //   );
 // };
 
-const TodoItems = ({ items, handleDeleteButton }) => {
+const TodoItems = () => {
   let key = 0;
+  const contextObj = useContext(TodoItemsContext);
+  const items = contextObj.todoItems;
+
   return (
     <div>
       {items.map((item) => (
-        <TodoItem
-          key={key++}
-          todoItem={item}
-          handleDeleteButton={handleDeleteButton}
-        ></TodoItem>
+        <TodoItem key={key++} todoItem={item}></TodoItem>
       ))}
     </div>
   );
